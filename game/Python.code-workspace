@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Web"
+		},
+		{
+			"path": "../../../과제/SW개론"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Web",
+		"html-to-css-autocompletion.triggerCharacters": false,
+		"git.ignoreLimitWarning": true
+	}
+}
