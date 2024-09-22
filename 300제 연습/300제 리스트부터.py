@@ -140,7 +140,7 @@ date = ['09/05', '09/06', '09/07', '09/08', '09/09']
 close_price = [10500, 10300, 10100, 10800, 11000]
 close_table = dict(zip(date, close_price))
 print(close_table)
-'''
+
 # 분기문
 
 time = input("현재시간: ")
@@ -172,15 +172,13 @@ user = input("입력: ")
 num, currency = user.split()
 print(float(num) * 환율[currency], "원")
 '''
+'''
 currency == values
 '''
-
-num1 = input("input number1: ")
-num2 = input("input number2: ")
-num3 = input("input number3: ")
-num1 = int(num1)
-num2 = int(num2)
-num3 = int(num3)
+'''
+num1 = int(input("input number1: "))
+num2 = int(input("input number2: "))
+num3 = int(input("input number3: "))
 
 if num1 >= num2 and num1 >= num3:  # num1이 제일 큰 경우
     print(num1)
@@ -188,3 +186,65 @@ elif num2 >= num1 and num2 >= num3:  # num2가 제일 큰 경우
     print(num2)
 else:  # 그 외(num3이 제일 큰 경우)
     print(num3)
+'''
+
+data = [
+    [ 2000,  3050,  2050,  1980],
+    [ 7500,  2050,  2050,  1980],
+    [15450, 15050, 15550, 14900]
+]
+
+result = []
+
+for line in data:
+    for column in line:
+        print(column * 1.00014)
+        result.append(column * 1.00014)
+    print("----")
+
+print(result)
+
+# 194
+result = []
+for line in data:
+    sub = []
+    for column in line:
+        sub.append(column * 1.00014)   # sub에 계산값 넣기
+    result.append(sub)  # sub 리스트를 result 리스트에 넣기
+print(result)
+
+ohlc = [["open", "high", "low", "close"],
+        [100, 110, 70, 100],
+        [200, 210, 180, 190],
+        [300, 310, 300, 310]]
+for row in ohlc[1:]:
+    if row[3] > 150:
+        print(row[3])
+
+# 197
+for row in ohlc[1:]:
+    if (row[3] >= row[0]):
+        print(row[3])
+
+# 198
+for row in ohlc[1:]:
+    if row[3] > row[0]:
+        print(row[1]-row[2])
+
+# 199
+volatility = []
+for row in ohlc[1:]:
+    volatility.append(row[1]-row[2])
+'''
+volatility = []
+for i in range(1, len(ohlc)):
+    volatility.append(ohlc[i][1]-ohlc[i][2])
+print(volatility)
+
+'''
+# 200
+profit = 0
+for row in ohlc[1:]:
+    profit += (row[3] - row[0])
+
+
