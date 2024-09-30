@@ -8,3 +8,5 @@ else:
         print("만 12세 이하입니다.")
     else:
         print("환영합니다.")
+finally:
+    print("쉽지 않네요")
