@@ -1,5 +1,0 @@
-money = input()
-print(type(money))
-money = int(money)
-print(type(money))
-print(money * 2)
