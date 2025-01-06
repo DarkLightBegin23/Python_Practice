@@ -10,3 +10,8 @@ class Myclass:
     def access_private_members(self):
         self.__private_method()
         print(self.__privatte_attribute)
+
+
+a = Myclass()
+
+a.access_private_members()

@@ -1,4 +1,4 @@
-d# 2753번 윤년
+# 2753번 윤년
 Year = int(input())
 
 if Year > 0 and Year <= 4000:

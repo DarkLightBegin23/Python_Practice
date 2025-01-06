@@ -3,7 +3,7 @@ result = a.pop('B')
 print(a)
 print(result)
 
-def add(a:int, b: int) -> int:
+def add(a:int, b: float) -> float:
     return a + b
 
 result = add(3, 3.4)
