@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.messagebox
-import tkinter.simpledialog
+import tkinter.simpledialog  # 사용자로부터 입력값을 받기 위한 대화 상자 제공
 from todo_func import Todo_list
 import pymysql
 
