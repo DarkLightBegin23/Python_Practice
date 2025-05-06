@@ -49,7 +49,7 @@ class TodoApp:
         """
         선택한 항목을 삭제하는 함수
         """
-        selected_tasks = self.listbox.curselection()
+        selected_tasks = self.listbox.curselection()  # curselection()은 현재 선택된 항목의 인덱스들을 반환합니다.
         if not selected_tasks:
             tk.messagebox.showwarning("삭제 오류", "삭제할 항목을 선택하세요.")
             return
@@ -63,11 +63,23 @@ class TodoApp:
 
     def finish(self):
         """
-        현재 할 일 목록을 파일에 저장합니다.
+        현재 GUI에 입력된 할 일 목록을 가져와 파일에 저장하는 메서드입니다.
+        사용자가 할 일을 모두 입력하고 '저장' 버튼을 눌렀을 때 실행됩니다.
         """
+        
+        # listbox 위젯에서 현재 저장된 모든 항목(할 일)을 가져옵니다.
+        # get(0, tk.END)는 0번 인덱스(처음)부터 마지막(tk.END)까지의 모든 아이템을 튜플 형태로 반환합니다.
         tasks = self.listbox.get(0, tk.END)
+
+        # 가져온 할 일 목록을 TodoList 클래스의 add_todo 메서드를 이용해 저장합니다.
+        # self.todo_list는 할 일 데이터를 관리하는 별도의 객체입니다.
+        # add_todo는 보통 이 데이터를 파일로 저장하거나 내부 목록에 추가하는 기능을 담당합니다. (todo_func.py에 add_todo 구현 완료)
         self.todo_list.add_todo(tasks)
+
+        # 사용자에게 저장이 완료되었음을 알리는 메시지 박스를 띄웁니다.
+        # 첫 번째 인자는 제목("저장 완료"), 두 번째 인자는 메시지 내용입니다. 
         tk.messagebox.showinfo("저장 완료", "할 일 목록이 파일에 저장되었습니다.")
+
 
     def refresh_listbox(self):
         """
