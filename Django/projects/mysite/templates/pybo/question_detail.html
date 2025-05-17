@@ -1,3 +1,6 @@
+{% load static %}  <!-- 스태틱 파일 사용하려면 필요한 태그 -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}}">
+
 <h1>{{ question.subject }}</h1>
 <div>
     {{ question.content }}
@@ -10,7 +13,7 @@
     {% endfor %}
     </ui>
 </div>
-<form action="{% url 'pybo:answer_create' question.id %}>" method="post">
+<form action="{% url 'pybo:answer_create' question.id %}" method="post">
     {% csrf_token %}  <!-- 웹 사이트 취약점 공격 방지 기술 (실제 웹 페이지에서 작성된 것인지 확인)-->
     <textarea name="content" id="content" rows="15"></textarea>
     <input type="submit" value="답변등록">
