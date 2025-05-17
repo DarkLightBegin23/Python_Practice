@@ -2,3 +2,16 @@
 <div>
     {{ question.content }}
 </div>
+<h5>{{ question.answer_set.count }}개의 답변이 있습니다.</h5>
+<div>
+    <ui>
+        {% for answer in question.answer_set.all%}
+        <li>{{answer.content}}</li>
+    {% endfor %}
+    </ui>
+</div>
+<form action="{% url 'pybo:answer_create' question.id %}>" method="post">
+    {% csrf_token %}  <!-- 웹 사이트 취약점 공격 방지 기술 (실제 웹 페이지에서 작성된 것인지 확인)-->
+    <textarea name="content" id="content" rows="15"></textarea>
+    <input type="submit" value="답변등록">
+</form>
