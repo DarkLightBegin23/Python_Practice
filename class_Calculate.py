@@ -20,16 +20,16 @@ class Calculate:
             return "0으로 나눌 수 없습니다."
     
 
-a = int(input("a = "))
-b = int(input("b = "))
+a, b = map(int, input("a, b 입력 :").split())
 
 # 객체 생성
 calc = Calculate(a, b)
-
 # 객체의 add 메소드 호출
-c = calc.add()
-d = calc.div()
+
+add_ab = calc.add()
+sub_ab = calc.add()
+mul_ab = calc.mul()
+div_ab = calc.div()
 
 
-print(c)
-print(d)
+print(add_ab, sub_ab, mul_ab, div_ab)
