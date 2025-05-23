@@ -1,6 +1,6 @@
 my_list = list(map(int, input().split()))
 
-var = my_list.count(3)
+var = my_list.count(3)  # count() 메서드
 
 if var < 4 and var > 0:
     print("3의 개수가 4개 미만입니다.")
