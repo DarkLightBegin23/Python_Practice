@@ -5,6 +5,11 @@ print(a)
 
 locate = ["대치", "여의도", "뚝섬", "위례", "천호", "잠실", "서현", "수원"] # locate 리스트 생성
 
-b = random.choice(locate) # locate 리스트 중 랜덤으로 출력
+# b = random.choice(locate) # locate 리스트 중 랜덤으로 출력
 
+def locateChoice(L):
+    located = random.choice(L)
+    return located
+
+b = locateChoice(locate)
 print(b)
