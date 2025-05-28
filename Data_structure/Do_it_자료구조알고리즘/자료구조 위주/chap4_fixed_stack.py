@@ -52,3 +52,4 @@ class FixedStack:
     def clear(self) -> None:
         """스택을 비움"""
         self.ptr = 0  # 포인터를 초기화하여 모든 데이터를 제거한 효과
+        
