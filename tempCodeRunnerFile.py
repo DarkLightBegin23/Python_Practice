@@ -1,2 +1,2 @@
-
-    def __next__(self):
+def __next__(self):
+    print("")
