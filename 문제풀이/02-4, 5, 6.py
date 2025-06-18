@@ -1,12 +1,12 @@
 # 02-4
 
-pin = "881220-1068234"
+pin = "881220-aaaaaaa"
 print(pin[7])
 
 # 02-5
 
-a = "a:b:c:d"
-b = a.replace(":", "#")
+a = input("띄어쓰기 입력(예) 1 2 3 4 : ")
+b = a.replace(" ", "#")
 print(b)
 
 # 02-6
